@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C667300923A0366C002BB7ED /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667300823A0366C002BB7ED /* NetworkHelper.swift */; };
+		C667300B23A036C5002BB7ED /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667300A23A036C5002BB7ED /* AppError.swift */; };
+		C667300E23A03713002BB7ED /* TVShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667300D23A03713002BB7ED /* TVShow.swift */; };
+		C667301123A03CF8002BB7ED /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667301023A03CF8002BB7ED /* Episodes.swift */; };
+		C667301323A03F94002BB7ED /* TVShowAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667301223A03F94002BB7ED /* TVShowAPIClient.swift */; };
+		C6AE1C9723A0336C00DEC02C /* EpisodesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AE1C9623A0336C00DEC02C /* EpisodesVC.swift */; };
+		C6AE1C9923A0338700DEC02C /* EpisodeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AE1C9823A0338700DEC02C /* EpisodeDetailVC.swift */; };
+		C6AE1C9D23A0346700DEC02C /* TVShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AE1C9C23A0346700DEC02C /* TVShowCell.swift */; };
 		CD01CD5C232178AF002D0255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CD5B232178AF002D0255 /* AppDelegate.swift */; };
-		CD01CD5E232178AF002D0255 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CD5D232178AF002D0255 /* ViewController.swift */; };
+		CD01CD5E232178AF002D0255 /* TVShowsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CD5D232178AF002D0255 /* TVShowsVC.swift */; };
 		CD01CD61232178AF002D0255 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD01CD5F232178AF002D0255 /* Main.storyboard */; };
 		CD01CD63232178B2002D0255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD01CD62232178B2002D0255 /* Assets.xcassets */; };
 		CD01CD66232178B2002D0255 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD01CD64232178B2002D0255 /* LaunchScreen.storyboard */; };
@@ -26,9 +34,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C667300823A0366C002BB7ED /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		C667300A23A036C5002BB7ED /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		C667300D23A03713002BB7ED /* TVShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShow.swift; sourceTree = "<group>"; };
+		C667301023A03CF8002BB7ED /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
+		C667301223A03F94002BB7ED /* TVShowAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowAPIClient.swift; sourceTree = "<group>"; };
+		C6AE1C9623A0336C00DEC02C /* EpisodesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesVC.swift; sourceTree = "<group>"; };
+		C6AE1C9823A0338700DEC02C /* EpisodeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailVC.swift; sourceTree = "<group>"; };
+		C6AE1C9C23A0346700DEC02C /* TVShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowCell.swift; sourceTree = "<group>"; };
 		CD01CD58232178AF002D0255 /* Pursuit-Core-iOS-Episodes-from-Online.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pursuit-Core-iOS-Episodes-from-Online.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD01CD5B232178AF002D0255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD01CD5D232178AF002D0255 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD01CD5D232178AF002D0255 /* TVShowsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsVC.swift; sourceTree = "<group>"; };
 		CD01CD60232178AF002D0255 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD01CD62232178B2002D0255 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD01CD65232178B2002D0255 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +72,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C667300C23A036DE002BB7ED /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				C667300A23A036C5002BB7ED /* AppError.swift */,
+				C667300823A0366C002BB7ED /* NetworkHelper.swift */,
+				C667301223A03F94002BB7ED /* TVShowAPIClient.swift */,
+			);
+			path = "Network Services";
+			sourceTree = "<group>";
+		};
+		C667300F23A0372C002BB7ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C667300D23A03713002BB7ED /* TVShow.swift */,
+				C667301023A03CF8002BB7ED /* Episodes.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C6AE1C9A23A0338F00DEC02C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD01CD5D232178AF002D0255 /* TVShowsVC.swift */,
+				C6AE1C9623A0336C00DEC02C /* EpisodesVC.swift */,
+				C6AE1C9823A0338700DEC02C /* EpisodeDetailVC.swift */,
+				C6AE1C9B23A0344200DEC02C /* Cells */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C6AE1C9B23A0344200DEC02C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C6AE1C9C23A0346700DEC02C /* TVShowCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CD01CD4F232178AF002D0255 = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				CD01CD5B232178AF002D0255 /* AppDelegate.swift */,
-				CD01CD5D232178AF002D0255 /* ViewController.swift */,
+				C667300F23A0372C002BB7ED /* Model */,
+				C6AE1C9A23A0338F00DEC02C /* Controllers */,
 				CD01CD5F232178AF002D0255 /* Main.storyboard */,
+				C667300C23A036DE002BB7ED /* Network Services */,
 				CD01CD62232178B2002D0255 /* Assets.xcassets */,
 				CD01CD64232178B2002D0255 /* LaunchScreen.storyboard */,
 				CD01CD67232178B2002D0255 /* Info.plist */,
@@ -197,8 +253,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD01CD5E232178AF002D0255 /* ViewController.swift in Sources */,
+				C6AE1C9723A0336C00DEC02C /* EpisodesVC.swift in Sources */,
+				C6AE1C9923A0338700DEC02C /* EpisodeDetailVC.swift in Sources */,
+				C667300E23A03713002BB7ED /* TVShow.swift in Sources */,
+				C667301123A03CF8002BB7ED /* Episodes.swift in Sources */,
+				CD01CD5E232178AF002D0255 /* TVShowsVC.swift in Sources */,
 				CD01CD5C232178AF002D0255 /* AppDelegate.swift in Sources */,
+				C667300923A0366C002BB7ED /* NetworkHelper.swift in Sources */,
+				C6AE1C9D23A0346700DEC02C /* TVShowCell.swift in Sources */,
+				C667301323A03F94002BB7ED /* TVShowAPIClient.swift in Sources */,
+				C667300B23A036C5002BB7ED /* AppError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
