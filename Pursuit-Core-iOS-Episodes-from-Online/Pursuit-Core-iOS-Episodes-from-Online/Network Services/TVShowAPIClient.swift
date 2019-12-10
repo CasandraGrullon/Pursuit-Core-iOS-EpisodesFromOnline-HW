@@ -11,7 +11,7 @@ import Foundation
 struct TVShowAPI{
     static func getShows(for searchQuery: String, completion: @escaping (Result<[Show], AppError>) -> ()){
         
-        let endpointURL = " https://api.tvmaze.com/search/shows?q=\(searchQuery)"
+        let endpointURL = "https://api.tvmaze.com/search/shows?q=\(searchQuery)"
         
         guard let url = URL(string: endpointURL) else {
             completion(.failure(.badURL(endpointURL)))
