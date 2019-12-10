@@ -12,6 +12,7 @@
 		C667300E23A03713002BB7ED /* TVShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667300D23A03713002BB7ED /* TVShow.swift */; };
 		C667301123A03CF8002BB7ED /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667301023A03CF8002BB7ED /* Episodes.swift */; };
 		C667301323A03F94002BB7ED /* TVShowAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667301223A03F94002BB7ED /* TVShowAPIClient.swift */; };
+		C667301523A04499002BB7ED /* EpisodeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667301423A04499002BB7ED /* EpisodeAPIClient.swift */; };
 		C6AE1C9723A0336C00DEC02C /* EpisodesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AE1C9623A0336C00DEC02C /* EpisodesVC.swift */; };
 		C6AE1C9923A0338700DEC02C /* EpisodeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AE1C9823A0338700DEC02C /* EpisodeDetailVC.swift */; };
 		C6AE1C9D23A0346700DEC02C /* TVShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AE1C9C23A0346700DEC02C /* TVShowCell.swift */; };
@@ -39,6 +40,7 @@
 		C667300D23A03713002BB7ED /* TVShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShow.swift; sourceTree = "<group>"; };
 		C667301023A03CF8002BB7ED /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		C667301223A03F94002BB7ED /* TVShowAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowAPIClient.swift; sourceTree = "<group>"; };
+		C667301423A04499002BB7ED /* EpisodeAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeAPIClient.swift; sourceTree = "<group>"; };
 		C6AE1C9623A0336C00DEC02C /* EpisodesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesVC.swift; sourceTree = "<group>"; };
 		C6AE1C9823A0338700DEC02C /* EpisodeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailVC.swift; sourceTree = "<group>"; };
 		C6AE1C9C23A0346700DEC02C /* TVShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowCell.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				C667300A23A036C5002BB7ED /* AppError.swift */,
 				C667300823A0366C002BB7ED /* NetworkHelper.swift */,
 				C667301223A03F94002BB7ED /* TVShowAPIClient.swift */,
+				C667301423A04499002BB7ED /* EpisodeAPIClient.swift */,
 			);
 			path = "Network Services";
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				C6AE1C9723A0336C00DEC02C /* EpisodesVC.swift in Sources */,
 				C6AE1C9923A0338700DEC02C /* EpisodeDetailVC.swift in Sources */,
 				C667300E23A03713002BB7ED /* TVShow.swift in Sources */,
+				C667301523A04499002BB7ED /* EpisodeAPIClient.swift in Sources */,
 				C667301123A03CF8002BB7ED /* Episodes.swift in Sources */,
 				CD01CD5E232178AF002D0255 /* TVShowsVC.swift in Sources */,
 				CD01CD5C232178AF002D0255 /* AppDelegate.swift in Sources */,
