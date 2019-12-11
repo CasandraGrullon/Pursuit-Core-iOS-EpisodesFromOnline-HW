@@ -24,7 +24,6 @@ class EpisodesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(tvShow)
         loadEpisodes()
         tableView.dataSource = self
     }
@@ -39,6 +38,12 @@ class EpisodesVC: UIViewController {
                 dump(data)
             }
         }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? EpisodeDetailVC, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("issue with segue")
+        }
+        detailVC.episode = episodes[indexPath.row]
     }
 
 }

@@ -22,7 +22,6 @@ class TVShowCell: UITableViewCell {
         ratingLabel.text = tvShow.rating?.average?.description
         
         guard let url = URL(string: tvShow.image?.medium ?? "") else {
-            print("TV ShowCell picture no bueno \(tvShow.image?.medium?.description)")
             return
         }
         
