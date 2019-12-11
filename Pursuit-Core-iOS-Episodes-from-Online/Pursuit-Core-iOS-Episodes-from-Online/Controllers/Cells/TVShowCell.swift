@@ -18,9 +18,11 @@ class TVShowCell: UITableViewCell {
     
     func configureCell(for tvShow: Show){
         nameLabel.text = tvShow.name
-        ratingLabel.text = tvShow.rating.average.description
+        ratingLabel.text = tvShow.rating?.average?.description
         
-        guard let url = URL(string: tvShow.image.medium) else {
+        
+        
+        guard let url = URL(string: tvShow.image?.medium ?? "") else {
             print("bad url")
             return
         }

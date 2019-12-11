@@ -23,7 +23,7 @@ class TVShowsVC: UIViewController {
     
     var searchQuery = "" {
         didSet{
-            shows = shows.filter{ ($0.name?.lowercased().contains(searchQuery.lowercased()) ?? false)}
+            loadData(with: searchQuery)
         }
     }
     
@@ -33,7 +33,16 @@ class TVShowsVC: UIViewController {
         searchBar.delegate = self
     }
     
-    func loadData(){
+    func loadData(with search: String){
+        TVShowAPI.getShows(for: search) { (result) in
+            switch result{
+            case .failure(let appError):
+                print(appError)
+            case .success(let data):
+                self.shows = data
+            }
+        }
+        
     }
 
     

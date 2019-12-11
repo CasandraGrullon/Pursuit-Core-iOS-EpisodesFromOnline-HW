@@ -11,6 +11,7 @@ import Foundation
 struct TVShowAPI{
     static func getShows(for searchQuery: String, completion: @escaping (Result<[Show], AppError>) -> ()){
         
+        let searchQuery = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "Insecure"
         let endpointURL = "https://api.tvmaze.com/search/shows?q=\(searchQuery)"
         
         guard let url = URL(string: endpointURL) else {
@@ -25,8 +26,8 @@ struct TVShowAPI{
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do{
-                    let searchResults = try JSONDecoder().decode([Show].self, from: data)
-                    let shows = searchResults
+                    let searchResults = try JSONDecoder().decode([TVShow].self, from: data)
+                    let shows = searchResults.map {$0.show}
                     completion(.success(shows))
                 }catch{
                     completion(.failure(.decodingError(error)))

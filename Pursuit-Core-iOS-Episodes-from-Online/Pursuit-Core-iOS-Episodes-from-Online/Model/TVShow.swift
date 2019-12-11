@@ -9,21 +9,21 @@
 import Foundation
 
 struct TVShow: Decodable {
-    let show: [Show]
+    let show: Show
 }
 struct Show: Decodable{
     let id: Int?
     let url: String?
     let name: String?
-    let rating: Rating
-    let image: ShowImage
+    let rating: Rating?
+    let image: ShowImage?
 }
 
 struct Rating: Decodable {
-    let average: Double
+    let average: Double?
 }
 struct ShowImage: Decodable{
-    let medium: String
-    let original: String
+    let medium: String?
+    let original: String?
     
 }
