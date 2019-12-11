@@ -25,8 +25,8 @@ struct TVShowAPI{
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do{
-                    let searchResults = try JSONDecoder().decode(TVShow.self, from: data)
-                    let shows = searchResults.show
+                    let searchResults = try JSONDecoder().decode([Show].self, from: data)
+                    let shows = searchResults
                     completion(.success(shows))
                 }catch{
                     completion(.failure(.decodingError(error)))

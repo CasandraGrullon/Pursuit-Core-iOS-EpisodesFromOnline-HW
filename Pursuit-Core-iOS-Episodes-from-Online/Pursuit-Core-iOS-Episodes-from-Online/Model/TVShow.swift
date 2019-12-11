@@ -12,9 +12,9 @@ struct TVShow: Decodable {
     let show: [Show]
 }
 struct Show: Decodable{
-    let id: Int
-    let url: String
-    let name: String
+    let id: Int?
+    let url: String?
+    let name: String?
     let rating: Rating
     let image: ShowImage
 }

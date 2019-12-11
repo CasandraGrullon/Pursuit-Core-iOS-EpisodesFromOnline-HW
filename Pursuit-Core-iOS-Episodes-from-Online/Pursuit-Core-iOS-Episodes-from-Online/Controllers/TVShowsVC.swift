@@ -23,32 +23,19 @@ class TVShowsVC: UIViewController {
     
     var searchQuery = "" {
         didSet{
-            shows = shows.filter{ $0.name.lowercased().contains(searchQuery.lowercased())}
+            shows = shows.filter{ ($0.name?.lowercased().contains(searchQuery.lowercased()) ?? false)}
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
         tableView.dataSource = self
         searchBar.delegate = self
     }
     
     func loadData(){
-        TVShowAPI.getShows(for: searchQuery) { (result) in
-            switch result{
-            case .failure(let appError):
-                print("appError: \(appError)")
-            case .success(let show):
-                self.shows = show
-                
-            }
-        }
     }
-    
-//    func filterSearch(for searchText: String) {
-//        shows = shows.filter{ $0.name.lowercased().contains(searchText.lowercased())}
-//    }
+
     
 }
 
@@ -73,5 +60,15 @@ extension TVShowsVC: UISearchBarDelegate {
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchQuery = searchText
+        TVShowAPI.getShows(for: searchQuery) { (result) in
+            switch result{
+            case .failure(let appError):
+                print("appError: \(appError)")
+            case .success(let show):
+                self.shows = show
+                
+            }
+        }
+
     }
 }
