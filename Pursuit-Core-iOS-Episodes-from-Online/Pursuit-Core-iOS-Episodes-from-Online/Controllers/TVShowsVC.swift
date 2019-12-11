@@ -45,6 +45,12 @@ class TVShowsVC: UIViewController {
         
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let episodeVC = segue.destination as? EpisodesVC, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("issue in segue")
+        }
+        episodeVC.tvShow = shows[indexPath.row]
+    }
     
 }
 
@@ -52,10 +58,12 @@ extension TVShowsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shows.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as? TVShowCell else {
             fatalError("cell error")
         }
+        
         let tvshow = shows[indexPath.row]
         
         cell.configureCell(for: tvshow)
@@ -64,20 +72,12 @@ extension TVShowsVC: UITableViewDataSource {
     }
 }
 extension TVShowsVC: UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchQuery = searchText
-        TVShowAPI.getShows(for: searchQuery) { (result) in
-            switch result{
-            case .failure(let appError):
-                print("appError: \(appError)")
-            case .success(let show):
-                self.shows = show
-                
-            }
-        }
-
     }
 }

@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="-57.971014492753625" y="116.51785714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--EpisodesVC-->
         <scene sceneID="FuD-CY-MOq">
             <objects>
-                <viewController id="eZh-Bp-ryv" sceneMemberID="viewController">
+                <viewController id="eZh-Bp-ryv" customClass="EpisodesVC" customModule="Pursuit_Core_iOS_Episodes_from_Online" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XVT-dk-hCb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,13 +124,49 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="episodeCell" id="svt-C6-jgH">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="episodeCell" rowHeight="190" id="svt-C6-jgH" customClass="EpisodeCell" customModule="Pursuit_Core_iOS_Episodes_from_Online" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="190"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="svt-C6-jgH" id="IZw-oo-6Xa">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dX0-FC-XZa">
+                                                    <rect key="frame" x="20" y="11" width="150" height="168"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="eDm-Bc-QoW"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name of ep" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhU-dR-dXk">
+                                                    <rect key="frame" x="178" y="19" width="208" height="24"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="season#, ep#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3js-iw-geV">
+                                                    <rect key="frame" x="178" y="51" width="208" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="dX0-FC-XZa" secondAttribute="bottom" id="0ZJ-TV-Pwn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zhU-dR-dXk" secondAttribute="trailing" constant="8" id="7gu-gN-zIi"/>
+                                                <constraint firstItem="zhU-dR-dXk" firstAttribute="leading" secondItem="dX0-FC-XZa" secondAttribute="trailing" constant="8" id="Bf0-qh-ovq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3js-iw-geV" secondAttribute="trailing" constant="8" id="Msk-xD-oUI"/>
+                                                <constraint firstItem="3js-iw-geV" firstAttribute="top" secondItem="zhU-dR-dXk" secondAttribute="bottom" constant="8" id="QJl-yx-8cq"/>
+                                                <constraint firstItem="dX0-FC-XZa" firstAttribute="top" secondItem="IZw-oo-6Xa" secondAttribute="topMargin" id="QoO-fK-b3v"/>
+                                                <constraint firstItem="zhU-dR-dXk" firstAttribute="top" secondItem="IZw-oo-6Xa" secondAttribute="topMargin" constant="8" id="gl8-3s-Kme"/>
+                                                <constraint firstItem="dX0-FC-XZa" firstAttribute="leading" secondItem="IZw-oo-6Xa" secondAttribute="leadingMargin" id="n9t-cq-qvT"/>
+                                                <constraint firstItem="3js-iw-geV" firstAttribute="leading" secondItem="dX0-FC-XZa" secondAttribute="trailing" constant="8" id="nhK-y8-EPB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="episodeImageView" destination="dX0-FC-XZa" id="lV8-aG-kTn"/>
+                                            <outlet property="episodeSeasonNumberLabel" destination="3js-iw-geV" id="Vf8-0l-If1"/>
+                                            <outlet property="episodeTitleLabel" destination="zhU-dR-dXk" id="jfh-fe-H5d"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -145,10 +181,13 @@
                         <viewLayoutGuide key="safeArea" id="xVa-ph-As0"/>
                     </view>
                     <navigationItem key="navigationItem" id="YFS-bm-U3z"/>
+                    <connections>
+                        <outlet property="tableView" destination="k7y-wh-8WJ" id="z6v-73-dta"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cf5-2M-IL8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561" y="117"/>
+            <point key="canvasLocation" x="1560.8695652173915" y="116.51785714285714"/>
         </scene>
     </scenes>
 </document>

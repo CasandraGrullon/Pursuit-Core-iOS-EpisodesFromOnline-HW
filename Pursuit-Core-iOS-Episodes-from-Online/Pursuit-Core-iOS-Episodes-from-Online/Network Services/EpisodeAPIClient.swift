@@ -9,7 +9,7 @@
 import Foundation
 
 struct EpisodeAPIClient{
-    static func getEpisodes(for showId: Int, completion: @escaping(Result<Episode, AppError>) -> ()){
+    static func getEpisodes(for showId: Int, completion: @escaping(Result<[Episode], AppError>) -> ()){
         let endpointURL = "http://api.tvmaze.com/shows/\(showId)/episodes"
         
         guard let url = URL(string: endpointURL) else {
@@ -24,7 +24,7 @@ struct EpisodeAPIClient{
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do{
-                    let searchResults = try JSONDecoder().decode(Episode.self, from: data)
+                    let searchResults = try JSONDecoder().decode([Episode].self, from: data)
                     let tvEpisodes = searchResults
                     completion(.success(tvEpisodes))
                 }catch{

@@ -9,14 +9,13 @@
 import Foundation
 
 struct Episode: Decodable{
-    let id: Int
     let url: String
     let name: String
     let season: Int
     let number: Int
-    let image: EpisodeImage
+    let image: EpisodeImage?
 }
 struct EpisodeImage: Decodable {
-    let medium: String
-    let original: String
+    let medium: String?
+    let original: String?
 }

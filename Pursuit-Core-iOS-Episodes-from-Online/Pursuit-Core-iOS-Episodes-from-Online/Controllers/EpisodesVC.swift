@@ -10,11 +10,51 @@ import UIKit
 
 class EpisodesVC: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var tvShow: Show?
+    
+    var episodes = [Episode](){
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print(tvShow)
+        loadEpisodes()
+        tableView.dataSource = self
     }
 
+    func loadEpisodes(){
+        EpisodeAPIClient.getEpisodes(for: tvShow?.id ?? 1) { (result) in
+            switch result{
+            case .failure(let appError):
+                print("app error: \(appError)")
+            case .success(let data):
+                self.episodes = data
+                dump(data)
+            }
+        }
+    }
 
+}
+
+extension EpisodesVC: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return episodes.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? EpisodeCell else {
+            fatalError("issue with cell")
+        }
+        
+        let ep = episodes[indexPath.row]
+        
+        cell.configureEpCell(for: ep)
+        return cell
+    }
 }

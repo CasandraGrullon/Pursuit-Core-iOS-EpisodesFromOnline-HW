@@ -18,7 +18,6 @@ struct Show: Decodable{
     let rating: Rating?
     let image: ShowImage?
 }
-
 struct Rating: Decodable {
     let average: Double?
 }

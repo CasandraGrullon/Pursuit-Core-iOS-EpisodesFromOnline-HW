@@ -17,15 +17,15 @@ class TVShowCell: UITableViewCell {
     var tvShow: Show?
     
     func configureCell(for tvShow: Show){
+        
         nameLabel.text = tvShow.name
         ratingLabel.text = tvShow.rating?.average?.description
         
-        
-        
         guard let url = URL(string: tvShow.image?.medium ?? "") else {
-            print("bad url")
+            print("TV ShowCell picture no bueno \(tvShow.image?.medium?.description)")
             return
         }
+        
         let request = URLRequest(url: url)
         
         NetworkHelper.shared.performDataTask(with: request ) { (result) in

@@ -33,7 +33,7 @@ class NetworkHelper {
       }
       
       switch urlResponse.statusCode {
-      case 200...299: break // everything went well here
+      case 200...299: break
       default:
         completion(.failure(.badStatusCode(urlResponse.statusCode)))
         return
