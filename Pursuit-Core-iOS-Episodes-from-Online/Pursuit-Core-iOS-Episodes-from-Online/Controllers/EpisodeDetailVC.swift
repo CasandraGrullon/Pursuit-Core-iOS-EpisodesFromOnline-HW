@@ -29,7 +29,7 @@ class EpisodeDetailVC: UIViewController {
             return
         }
         episodeName.text = ep.name
-        seasonEpisodeNumber.text = "S:\(ep.season),E:\(ep.number)"
+        seasonEpisodeNumber.text = "s:\(ep.season),e:\(ep.number)"
         descriptionText.text = ep.summary?.replacingOccurrences(of: "<p>", with: "").replacingOccurrences(of: "</p>", with: "") ?? "no summary"
         
         guard let url = URL(string: episode?.image?.original ?? "https://images.dog.ceo/breeds/terrier-westhighland/n02098286_238.jpg" ) else {
